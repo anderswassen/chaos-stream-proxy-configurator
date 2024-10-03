@@ -1,13 +1,52 @@
 # Chaos Stream Proxy Configurator
 
-The **Chaos Stream Proxy Configurator** is a tool that helps you modify HLS streams by introducing custom delays to specific segments or all segments of the stream. It’s designed to work with a chaos-proxy that manipulates the stream based on the URL parameters you generate.
+The **Chaos Stream Proxy Configurator** is a web-based tool that allows users to generate a URL with custom delays applied to specific segments of an HLS stream. This tool is particularly useful when you want to simulate network issues or delays in a stream by modifying its segments through a chaos-proxy.
 
-## How It Works
+## Features
 
-The app allows you to:
-- Input the base URL of your chaos-proxy.
-- Input the URL of your HLS stream.
-- Specify the delay (in milliseconds) to apply to stream segments.
-- Define which segments will receive the delay or apply it to all segments.
+- Input the HLS stream URL.
+- Input a custom chaos-proxy URL.
+- Specify delay times in milliseconds.
+- Define which segments to apply the delay to, or apply the delay to all segments using the `*` symbol.
+- Automatically appends `https://` to URLs if not provided.
+- Generates the final URL with the required delay settings.
 
-Once you provide these inputs, the app generates a URL that can be used to modify the behavior of the HLS stream as it passes through the chaos-proxy.
+## Getting Started
+
+### Prerequisites
+
+Before running the app, make sure you have the following installed on your machine:
+
+- [Node.js](https://nodejs.org/) (Includes npm)
+- A code editor like [Visual Studio Code](https://code.visualstudio.com/)
+
+### Installation
+
+1. Clone the repository:
+    ```bash
+    git clone <repository_url>
+    ```
+   
+2. Navigate to the project folder:
+    ```bash
+    cd chaos-stream-proxy-configurator
+    ```
+
+3. Install the dependencies:
+    ```bash
+    npm install
+    ```
+
+### Running the App
+
+To run the app locally, use the following command:
+```bash
+npm start
+
+## Docker
+
+To run the Chaos Stream Proxy Configurator using Docker:
+
+1. Build the Docker image:
+   ```bash
+   docker build -t chaos-stream-proxy-configurator .
