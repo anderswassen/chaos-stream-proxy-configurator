@@ -11,3 +11,11 @@ The app allows you to:
 - Define which segments will receive the delay or apply it to all segments.
 
 Once you provide these inputs, the app generates a URL that can be used to modify the behavior of the HLS stream as it passes through the chaos-proxy.
+
+## Docker
+
+To run the Chaos Stream Proxy Configurator using Docker:
+
+1. Build the Docker image:
+   ```bash
+   docker build -t chaos-stream-proxy-configurator .
