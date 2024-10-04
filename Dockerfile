@@ -22,8 +22,8 @@ FROM nginx:alpine
 # Step 8: Copy the built React app from the previous build stage to the Nginx web directory
 COPY --from=build /app/build /usr/share/nginx/html
 
-# Step 9: Expose the port that the app will run on
-EXPOSE 80
+# Step 9: Copy nginx conf template so env variable PORT is used for listening port
+COPY --from=build /app/default.conf.template /etc/nginx/templates/
 
 # Step 10: Start Nginx server
 CMD ["nginx", "-g", "daemon off;"]
